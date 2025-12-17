@@ -25,9 +25,9 @@ const adminAuth = basicAuth({
     realm: 'Imb4T3st4pp',
 });
 
-app.get('/register', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'register.html'));
-});
+// app.get('/register', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'public', 'register.html'));
+// });
 
 // --- Protect the Admin Routes ---
 // This requires a password to access /admin.html
