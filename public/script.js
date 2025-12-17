@@ -51,11 +51,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
             spotsData = await response.json();
 
-            // --- FIX: SAFETY CHECK ---
-            // If spotsData is null or not an object, initialize as empty to prevent crash
-            if (!spotsData || typeof spotsData !== 'object') {
-                console.warn("Spots data is missing or invalid. Initializing empty.");
-                spotsData = {};
+            // --- FIX: FALLBACK DATA ---
+            // If API returns null/empty (fresh DB), use this default data so the app works.
+            if (!spotsData || typeof spotsData !== 'object' || Object.keys(spotsData).length === 0) {
+                console.warn("Spots data missing from API. Using Fallback Data.");
+                spotsData = {
+                    "zone1": {
+                        "name": "Zone A (Inside)",
+                        "layoutImages": ["images/zone1_layout.jpg"], // Ensure these images exist in public/images/
+                        "spots": {
+                            "A1": { "name": "A1", "price": 35000, "status": "Available" },
+                            "A2": { "name": "A2", "price": 35000, "status": "Available" },
+                            "A3": { "name": "A3", "price": 35000, "status": "Available" },
+                            "A4": { "name": "A4", "price": 35000, "status": "Available" },
+                            "A5": { "name": "A5", "price": 35000, "status": "Available" },
+                            "A6": { "name": "A6", "price": 35000, "status": "Available" },
+                            "A7": { "name": "A7", "price": 35000, "status": "Available" },
+                            "A8": { "name": "A8", "price": 35000, "status": "Available" }
+                        }
+                    },
+                    "zone2": {
+                        "name": "Zone B (Outside)",
+                        "layoutImages": ["images/zone2_layout.jpg"],
+                        "spots": {
+                            "B1": { "name": "B1", "price": 25000, "status": "Available" },
+                            "B2": { "name": "B2", "price": 25000, "status": "Available" },
+                            "B3": { "name": "B3", "price": 25000, "status": "Available" },
+                            "B4": { "name": "B4", "price": 25000, "status": "Available" }
+                        }
+                    }
+                };
             }
 
             renderZoneTabs();
@@ -65,7 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (zoneKeys.length > 0) {
                 renderZone(zoneKeys[0]);
             } else {
-                // Optional: handle case with no zones (e.g., show message)
                 const spotButtonsContainer = document.getElementById('spot-buttons-container');
                 if (spotButtonsContainer) spotButtonsContainer.innerHTML = "<p>No spots currently available.</p>";
             }
