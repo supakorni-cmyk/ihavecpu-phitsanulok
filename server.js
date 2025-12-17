@@ -20,7 +20,7 @@ const transporter = nodemailer.createTransport({
 app.use(express.json());
 
 const adminAuth = basicAuth({
-    users: { 'admin': 'mktihavecpunarak' }, // <-- CHANGE your username and password here
+    users: { 'admin': 'mktihavecpu' }, // <-- CHANGE your username and password here
     challenge: true, // This will cause a browser popup
     realm: 'Imb4T3st4pp',
 });
