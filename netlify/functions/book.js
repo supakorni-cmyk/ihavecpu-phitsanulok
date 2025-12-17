@@ -61,7 +61,7 @@ export default async(req) => {
             to: email,
             cc: finalCCList, // <-- Use the new combined list
             subject: `[ iHAVECPU x ${brand} ] Booking Confirmation at iHAVECPU Pattaya`,
-            html: `<h1>Thank you!</h1><p>Booking for brand "<strong>${brand}</strong>" confirmed.</p><h3>Positions:</h3><ul>${spotsListHtml}</ul><hr><p>Subtotal: ${subtotal.toLocaleString()} THB</p>${discountHtml}<h3>Total: ${finalTotal.toLocaleString()} THB</h3><br><p>Sincerely,<br>iHAVECPU Marketing</p>`
+            html: `<h1>Thank you!</h1><p>Booking for brand "<strong>${brand}</strong>" completed.</p><h3>Positions:</h3><ul>${spotsListHtml}</ul><hr><h3> Please wait for our confirmation email</h3><br><p>Sincerely,<br>iHAVECPU Marketing</p>`
         };
         await transporter.sendMail(mailOptions);
 
