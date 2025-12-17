@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Opening Registration - iHAVECPU Pattaya</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific styles for the registration page */
+        .registration-container {
+            max-width: 600px;
+            margin: 5rem auto;
+            padding: 2rem;
+            background-color: var(--light-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .event-details {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        /* --- NEW BANNER STYLE --- */
+        .event-banner {
+            width: 100%;
+            height: auto;
+            max-height: 250px; /* Limit height so the form isn't pushed too far down */
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .event-details h1 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        .event-info {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+        .event-info strong {
+            color: var(--dark-color);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #c0392b;
+        }
+        .map-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--selection-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .map-link:hover {
+            text-decoration: underline;
+        }
+        /* Navbar tweaks for this page */
+        header {
+            position: relative; 
+            background-color: var(--dark-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.png" alt="iHAVECPU Logo"></a>
+        </div>
+        <nav id="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="index.html#gallery">Gallery</a>
+            <a href="index.html#booking">Ad Booking</a>
+        </nav>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </header>
+
+    <main>
+        <div class="registration-container">
+            <div class="event-details">
+                <!-- NEW IMAGE BANNER -->
+                <!-- Make sure to add grand_opening_banner.jpg to your public/images folder -->
+                <img src="images/grand_opening_banner.jpg" alt="Grand Opening Event" class="event-banner">
+
+                <h1>Grand Opening Registration</h1>
+                <p class="event-info">Join us for the grand opening of our new Pattaya branch!</p>
+                
+                <p class="event-info">
+                    <strong>📅 Date:</strong> 26 December 2025
+                </p>
+                <p class="event-info">
+                    <strong>📍 Location:</strong> iHAVECPU Pattaya
+                </p>
+                <a href="https://maps.app.goo.gl/WoUuaRzfmy3Tbyhi6" target="_blank" class="map-link">
+                    View on Google Maps ↗
+                </a>
+            </div>
+
+            <!-- GOOGLE FORM SUBMISSION -->
+            <!-- Replace the action URL and entry IDs with your own -->
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSfJWiwkTuNUQOVFpMcKE6GVzQX6wv5Jka2LHgwK0YHEhI0kJA/formResponse" method="POST" target="_blank" onsubmit="handleFormSubmit()">
+                
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="entry.899219277" required placeholder="Your Name">
+                </div>
+
+                <div class="form-group">
+                    <label for="brand">Brand / Distributor</label>
+                    <select id="brand" name="entry.2041276154">
+                        <option value="Brand">Brand</option>
+                        <option value="Distributor">Distributor</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Company Name</label>
+                    <input type="text" id="company" name="entry.1998366010" required placeholder="Your Name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="entry.455796492" required placeholder="Enter your email">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="entry.1992770909" required placeholder="Enter your phone number">
+                </div>
+
+                <div class="form-group">
+                    <label for="guests">Number of Guests</label>
+                    <input type="number" id="guests" name="entry.1803300730" required>
+                </div>
+
+                <button type="submit" class="submit-btn">Register Now</button>
+            </form>
+            
+            <div id="success-message" style="display:none; text-align: center; margin-top: 20px; color: green;">
+                <h3>Thank you for registering!</h3>
+                <p>We look forward to seeing you at the event.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 iHAVECPU Pattaya. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Simple script for the mobile menu on this page
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        if (menuToggle && navMenu) {
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+            });
+        }
+
+        // Show success message after submission (since Google Forms redirects)
+        // Note: This is a simple visual feedback. For a true SPA experience with Google Forms, 
+        // you'd need a more complex AJAX setup which can be tricky with CORS.
+        function handleFormSubmit() {
+            setTimeout(() => {
+                document.querySelector('form').style.display = 'none';
+                document.getElementById('success-message').style.display = 'block';
+            }, 1000); 
+        }
+    </script>
+</body>
+</html>
