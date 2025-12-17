@@ -46,7 +46,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 const adSpots = {
 "exteriorLogo": {
     "name": "Exterior Logo",
-    "layoutImages": ["images/exterior _logo1.jpg", "exterior_logo2.jpg"],
+    "layoutImages": ["images/exterior _logo1.jpg", "logo2.jpg"],
     "spots": {
       "EX1": { "name": "EX1", "size": "1920x1080px", "price": 30000, "status": "Available", "bookedBy": "" },
       "EX2": { "name": "EX2", "size": "1920x1080px", "price": 30000, "status": "Available", "bookedBy": "" },
