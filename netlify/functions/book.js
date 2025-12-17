@@ -51,7 +51,7 @@ export default async(req) => {
         const discountHtml = discountAmount > 0 ? `<p>Discount: -${discountAmount.toLocaleString()} THB</p>` : '';
 
         // --- UPDATED: Combine user CCs with admin CCs ---
-        const adminCCs = '' //'panarin.b@ihavecpu.com, sompong@ihavecpu.com, jittikorn.m@ihavecpu.com, kittichai.r@ihavecpu.com, setthinat.s@ihavecpu.com, attapon.p@ihavecpu.com, sutharat@ihavecpu.com, sophisa.p@ihavecpu.com, supakorn.i@ihavecpu.com, account@ihavecpu.com';
+        const adminCCs = 'panarin.b@ihavecpu.com, sompong@ihavecpu.com, jittikorn.m@ihavecpu.com, kittichai.r@ihavecpu.com, setthinat.s@ihavecpu.com, attapon.p@ihavecpu.com, sutharat@ihavecpu.com, sophisa.p@ihavecpu.com, supakorn.i@ihavecpu.com, account@ihavecpu.com';
         let finalCCList = adminCCs;
         if (ccEmails && ccEmails.trim() !== '') {
             finalCCList += `, ${ccEmails}`;
