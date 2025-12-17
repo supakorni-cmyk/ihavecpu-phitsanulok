@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const initializeApp = async () => {
         try {
-            const response = await fetch('/api/spots');
+            const response = await fetch('/.netlify/functions/spots');
             spotsData = await response.json();
             renderZoneTabs();
             const firstZoneId = Object.keys(spotsData)[0];
