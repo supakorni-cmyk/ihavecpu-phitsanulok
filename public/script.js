@@ -576,14 +576,6 @@ document.addEventListener('DOMContentLoaded', () => {
             <input type="text" id="name" required placeholder="Your Name">
 
             <label>Brand / Distributor *</label>
-            <div class="checkbox-group">
-                <label class="checkbox-label"><input type="checkbox" name="businessType" value="Brand"> Brand</label>
-                <label class="checkbox-label"><input type="checkbox" name="businessType" value="Distributor"> Distributor</label>
-                <div class="checkbox-inline">
-                    <label class="checkbox-label"><input type="checkbox" name="businessType" value="Other" id="check-other"> Other:</label>
-                    <input type="text" id="other-text" class="inline-input" placeholder="Please specify">
-                </div>
-            </div>
 
             <label for="brand">Company Name *</label>
             <input type="text" id="brand" required placeholder="Your Company Name">
@@ -631,7 +623,6 @@ document.addEventListener('DOMContentLoaded', () => {
             email: emailInput.value, 
             brand: brandInput.value,
             phone: phoneInput.value,
-            businessType: businessTypes.join(', '),
             ccEmails: ccInput.value 
         };
         
