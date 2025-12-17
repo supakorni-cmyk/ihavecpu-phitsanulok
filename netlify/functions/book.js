@@ -60,7 +60,7 @@ export default async(req) => {
             from: `"iHAVECPU Marketing" <${process.env.GMAIL_USER}>`,
             to: email,
             cc: finalCCList, // <-- Use the new combined list
-            subject: `[ iHAVECPU x ${brand} ] Booking Confirmation at iHAVECPU Pattaya`,
+            subject: `[ iHAVECPU x ${brand} ] Booking Confirmation at iHAVECPU Phitsanulok`,
             html: `<h1>Thank you!</h1><p>Booking for brand "<strong>${brand}</strong>" completed.</p><h3>Positions:</h3><ul>${spotsListHtml}</ul><hr><h3> Please wait for our confirmation email</h3><br><p>Sincerely,<br>iHAVECPU Marketing</p>`
         };
         await transporter.sendMail(mailOptions);
