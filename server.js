@@ -44,9 +44,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // --- In-Memory Mock Database (Organized by Zones) ---
 const adSpots = {
-    "exteriorLogo": {
+"exteriorLogo": {
     "name": "Exterior Logo",
-    "layoutImages": ["images/exterior_logo1.jpg", "images/exterior_logo2.jpg"],
+    "layoutImages": ["images/exterior _logo1.jpg", "exterior _logo2.jpg"],
     "spots": {
       "EX1": { "name": "EX1", "size": "1920x1080px", "price": 30000, "status": "Available", "bookedBy": "" },
       "EX2": { "name": "EX2", "size": "1920x1080px", "price": 30000, "status": "Available", "bookedBy": "" },
@@ -64,7 +64,7 @@ const adSpots = {
       "EX14": { "name": "EX14", "size": "1920x1080px", "price": 30000, "status": "Available", "bookedBy": "" },
       "EX15": { "name": "EX15", "size": "1920x1080px", "price": 30000, "status": "Available", "bookedBy": "" },
       "EX16": { "name": "EX16", "size": "1920x1080px", "price": 30000, "status": "Available", "bookedBy": "" },
-      "EX17": { "name": "EX16", "size": "1920x1080px", "price": 30000, "status": "Available", "bookedBy": "" }
+      "EX17": { "name": "EX17", "size": "1920x1080px", "price": 30000, "status": "Available", "bookedBy": "" }
     }
   },
   "exteriorSticker": {
