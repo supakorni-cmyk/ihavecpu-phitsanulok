@@ -46,7 +46,8 @@ export default async(req) => {
         if (bookedSpotsDetails.length === 2) { discountAmount = 5000; } else if (bookedSpotsDetails.length >= 3) { discountAmount = 10000; }
         const finalTotal = subtotal - discountAmount;
 
-        const spotsListHtml = bookedSpotsDetails.map(s => `<li>${s.name} - ${s.price.toLocaleString()} THB</li>`).join('');
+        // const spotsListHtml = bookedSpotsDetails.map(s => `<li>${s.name} - ${s.price.toLocaleString()} THB</li>`).join('');
+        const spotsListHtml = bookedSpotsDetails.map(s => `<li>${s.name}</li>`).join('');
         const discountHtml = discountAmount > 0 ? `<p>Discount: -${discountAmount.toLocaleString()} THB</p>` : '';
 
         // --- UPDATED: Combine user CCs with admin CCs ---
@@ -61,7 +62,7 @@ export default async(req) => {
             to: email,
             cc: finalCCList, // <-- Use the new combined list
             subject: `[ iHAVECPU x ${brand} ] Booking Confirmation at iHAVECPU Phitsanulok`,
-            html: `<h1>Thank you!</h1><p>Booking for brand "<strong>${brand}</strong>" completed.</p><h3>Positions:</h3><ul>${s.name}</ul><hr><h3> Please wait for our confirmation email.</h3><br><p>Sincerely,<br>iHAVECPU Marketing</p>`
+            html: `<h1>Thank you!</h1><p>Booking for brand "<strong>${brand}</strong>" completed.</p><h3>Positions:</h3><ul>${spotsListHtml}</ul><hr><h3> Please wait for our confirmation email.</h3><br><p>Sincerely,<br>iHAVECPU Marketing</p>`
         };
         await transporter.sendMail(mailOptions);
 
