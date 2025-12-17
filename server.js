@@ -20,14 +20,14 @@ const transporter = nodemailer.createTransport({
 app.use(express.json());
 
 const adminAuth = basicAuth({
-    users: { 'admin': 'mktihavecpu' }, // <-- CHANGE your username and password here
+    users: { 'admin': 'mktihavecpunarak' }, // <-- CHANGE your username and password here
     challenge: true, // This will cause a browser popup
     realm: 'Imb4T3st4pp',
 });
 
-// app.get('/register', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'public', 'register.html'));
-// });
+app.get('/register', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'register.html'));
+});
 
 // --- Protect the Admin Routes ---
 // This requires a password to access /admin.html
