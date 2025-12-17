@@ -612,24 +612,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const brandInput = document.getElementById('brand');
         const phoneInput = document.getElementById('phone');
         const ccInput = document.getElementById('cc');
-        const otherTextInput = document.getElementById('other-text');
         const statusMessage = document.getElementById('status-message');
-
-        const checkedBoxes = document.querySelectorAll('input[name="businessType"]:checked');
-        if (checkedBoxes.length === 0) {
-            statusMessage.className = 'status-message error';
-            statusMessage.textContent = "Please select at least one Brand/Distributor type.";
-            return;
-        }
-
-        let businessTypes = [];
-        checkedBoxes.forEach(box => {
-            if (box.value === 'Other') {
-                businessTypes.push(`Other: ${otherTextInput.value}`);
-            } else {
-                businessTypes.push(box.value);
-            }
-        });
 
         if (selection.length === 0) {
             statusMessage.className = 'status-message error';
